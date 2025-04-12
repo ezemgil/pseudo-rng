@@ -1,8 +1,8 @@
 class LinearCongruentialMethod:
-    def __init__(self, seed: int, k: int, g: int, c: int):
+    def __init__(self, seed: int, a: int, m: int, c: int):
         self.seed = seed
-        self.a = 1 + 4 * k
-        self.m = 2 ** g
+        self.a = a
+        self.m = m
         self.c = c
 
     def generate(self, n:int) -> list[int]:
@@ -34,7 +34,7 @@ class LinearCongruentialMethod:
     def execute(self) -> None:
         print("Método Congruencial Lineal")
         self.seed = int(input("Semilla: "))
-        k = int(input("Constante multiplicativa: a = 1 +4k. Ingrese el valor de k: "))
+        k = float(input("Constante multiplicativa: a = 1 +4k. Ingrese el valor de k: "))
         g = int(input("Módulo: m = 2^g. Ingrese el valor de g: "))
         self.c = int(input("Constante aditiva c (Debe ser relativamente primo a m): "))
         n = int(input("Número de números pseudo aleatorios a generar: "))
